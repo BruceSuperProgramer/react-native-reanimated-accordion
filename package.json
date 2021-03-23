@@ -1,6 +1,6 @@
 {
   "name": "react-native-reanimated-accordion",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Reanimated accordion view",
   "types": "lib/Accordion.d.ts",
   "main": "lib/Accordion",
@@ -8,12 +8,18 @@
     "build": "rm ./lib/* && tsc",
     "pre": "rm ./lib/* && tsc && npm version patch"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BruceSuperProgramer/react-native-reanimated-accordion"
+  },
+  "bugs": {
+    "url": "https://github.com/BruceSuperProgramer/react-native-reanimated-accordion/issues"
+  },
+  "homepage": "https://github.com/BruceSuperProgramer/react-native-reanimated-accordion",
   "author": "Bruce He",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "react-native-reanimated": "^2.0.0",
-    "react-native-redash": "^16.0.8",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-redash": "^16.0.8"
   },
   "devDependencies": {
     "@types/react-native": "^0.62.0",
@@ -21,7 +27,9 @@
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.9.0",
     "tslint-react": "^3.5.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "react-native-reanimated": "^2.0.0",
+    "react-native-vector-icons": "^6.6.0"
   },
   "peerDependencies": {
     "react": "16.11.0",
