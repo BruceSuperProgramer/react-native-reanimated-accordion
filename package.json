@@ -1,5 +1,5 @@
 {
-  "name": "react-native-reanimated-accordion-view",
+  "name": "react-native-reanimated-accordion",
   "version": "0.0.1",
   "description": "Reanimated accordion view",
   "types": "lib/Accordion.d.ts",
