@@ -1,19 +1,15 @@
 import * as React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import Animated, {
-  Extrapolate,
-  interpolate,
   measure,
   runOnUI,
   useAnimatedRef,
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
-  withSpring,
   withTiming
 } from "react-native-reanimated";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
-import { PADDING } from "./config";
 
 interface Accordion {
   headerComponent: React.ReactNode;
@@ -25,31 +21,26 @@ const Accordion = ({ headerComponent, bodyComponent }: Accordion) => {
   const open = useSharedValue(false);
   const height = useSharedValue(0);
   const progress = useDerivedValue(() =>
-    open.value ? withSpring(1) : withTiming(0)
+    open.value ? withTiming(1) : withTiming(0)
   );
 
   const bodyContainerDynamicStyle = useAnimatedStyle(() => {
     return {
-      height: height.value * progress.value + 1,
+      height: height.value * progress.value + 0.1,
       opacity: progress.value === 0 ? 0 : 1
     };
   });
 
   const renderCollapseIcon = () => {
     const dynamicStyle = useAnimatedStyle(() => {
-      const rotate = interpolate(
-        progress.value,
-        [0, 1],
-        [0, 180],
-        Extrapolate.CLAMP
-      );
       return {
-        transform: [{ rotate: `${rotate}deg` }]
+        transform: [{ rotate: `${progress.value * 180}deg` }]
       };
     });
     return (
       <>
         <TouchableOpacity
+          style={styles.chevronIcon}
           onPress={() => {
             if (height.value === 0) {
               runOnUI(() => {
@@ -71,8 +62,10 @@ const Accordion = ({ headerComponent, bodyComponent }: Accordion) => {
   return (
     <>
       <View style={styles.headerContainer}>
-        <View style={styles.headerContent}>{headerComponent}</View>
-        {renderCollapseIcon()}
+        <View style={styles.headerContent}>
+          {headerComponent}
+          <>{renderCollapseIcon()}</>
+        </View>
       </View>
       <Animated.View style={[styles.bodyContainer, bodyContainerDynamicStyle]}>
         <View ref={aref} style={styles.bodyContent}>
@@ -85,15 +78,20 @@ const Accordion = ({ headerComponent, bodyComponent }: Accordion) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    padding: PADDING,
     width: "100%",
     flexDirection: "row"
   },
   headerContent: {
-    flex: 1
+    width: "100%"
   },
   bodyContainer: { width: "100%", overflow: "hidden" },
-  bodyContent: { width: "100%" }
+  bodyContent: { width: "100%" },
+  chevronIcon: {
+    position: "absolute",
+    right: 10,
+    top: 10,
+    alignSelf: "center"
+  }
 });
 
 export default Accordion;
