@@ -85,7 +85,6 @@ const Accordion = ({ headerComponent, bodyComponent }: Accordion) => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: "red",
     padding: PADDING,
     width: "100%",
     flexDirection: "row"
