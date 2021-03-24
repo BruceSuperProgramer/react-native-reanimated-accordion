@@ -6,7 +6,7 @@ A React Native accordion component that run at 60 fps, even on low-end devices.
 
 ## Installation
 
-1. Run: `$ npm install --save react-native-vector-icons`
+1. Run: `$ npm install --save react-native-reanimated-accordion or yarn add react-native-reanimated-accordion`
 2. As [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) and [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) are peer dependencies, ensure you have them installed and linked properly. Check peer dependencies on package.json file make sure correct version installed.
 
 ## Usage
