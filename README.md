@@ -2,7 +2,7 @@
 
 A React Native accordion component that run at 60 fps, even on low-end devices.
 
-![Screenshot of React Native accordion](https://firebasestorage.googleapis.com/v0/b/publicimage-6ea8e.appspot.com/o/ezgif.com-gif-maker.gif?alt=media&token=d1fa5eac-21a1-41e8-a32f-7b972d6c8d98)
+![Screenshot of React Native accordion](https://firebasestorage.googleapis.com/v0/b/publicimage-6ea8e.appspot.com/o/react-native-reanimated-accordion.gif?alt=media&token=e82f5e45-74d2-4c99-a3df-c47267bdd046)
 
 ## Installation
 
